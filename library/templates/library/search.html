@@ -1,6 +1,6 @@
 {% extends "library/base.html" %}
 {% load staticfiles %}
-{% block title %}搜索{% endblock %}
+{% block title %}Search{% endblock %}
 
 {% block content %}
 
@@ -20,23 +20,22 @@
                     <div class="input-group">
                         {{ searchForm.keyword }}
                         <span class="input-group-btn">
-                        <button class="btn btn-default btn-lg btn-info" type="submit">图书检索</button>
+                        <button class="btn btn-default btn-lg btn-info" type="submit">Search</button>
                     </span>
                     </div>
                 </div>
             </form>
         </div>
 
-        <h2 id='hint' class="label-success col-md-5 col-md-offset-2">以下是{{ search_by }}匹配'{{ keyword }}'的结果</h2>
         <table class="table table-hover">
             <thead>
             <th>#</th>
-            <th>封面</th>
-            <th>标题</th>
-            <th>作者</th>
-            <th>分类</th>
-            <th>在馆位置</th>
-            <th>在馆数量</th>
+            <th>Cover</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Catogory</th>
+            <th>Location</th>
+            <th>Quantity</th>
             </thead>
             <tbody>
             {% for book in books %}
@@ -59,7 +58,7 @@
                 </tr>
             {% empty %}
                 <tr>
-                    <td>暂无图书</td>
+                    <td>No book available</td>
                 </tr>
             {% endfor %}
             </tbody>
@@ -69,18 +68,18 @@
             <ul class="pager">
                 {% if books.has_previous %}
                     <li class="previous"><a
-                            href="{{ current_path }}&page={{ books.previous_page_number }}#hint">上一页</a>
+                            href="{{ current_path }}&page={{ books.previous_page_number }}#hint">Prev Page</a>
                     </li>
                 {% else %}
-                    <li class="previous disabled"><a href="#">上一页</a></li>
+                    <li class="previous disabled"><a href="#">Next Page</a></li>
                 {% endif %}
-                第 {{ books.number }} / {{ books.paginator.num_pages }}页
+                No. {{ books.number }} / {{ books.paginator.num_pages }} Page
                 {% if books.has_next %}
                     <li class="next"><a
-                            href="{{ current_path }}&page={{ books.next_page_number }}#hint">下一页</a>
+                            href="{{ current_path }}&page={{ books.next_page_number }}#hint">Next Page</a>
                     </li>
                 {% else %}
-                    <li class="next disabled"><a href="#">下一页</a></li>
+                    <li class="next disabled"><a href="#">Next Page</a></li>
                 {% endif %}
             </ul>
         </nav>

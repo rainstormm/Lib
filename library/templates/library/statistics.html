@@ -1,12 +1,9 @@
-{% extends 'library/base.html' %}
-{% load staticfiles %}
-
-{% block title %} 统计信息 {% endblock %}
+{% block title %} Statistics {% endblock %}
 
 {% block content %}
 
     <div class="text-center">
-        <h1>统计信息</h1>
+        <h1>Statistics</h1>
     </div>
     <div id="reader-rank" class="col-md-offset-3" style="width: 1000px;height:400px;"></div>
     <div id="book-rank" class="col-md-offset-3 myContainer" style="width: 1000px;height:400px;"></div>
@@ -18,11 +15,11 @@
         // 指定图表的配置项和数据
         var readerOption = {
             title: {
-                text: '借书排行榜'
+                text: 'Ranking'
             },
             tooltip: {},
             legend: {
-                data: ['借书量']
+                data: ['Quantity']
             },
             xAxis: {
                 data: [ {% for x in readerData %} '{{ x }}', {% endfor %} ]
@@ -30,7 +27,7 @@
             },
             yAxis: {},
             series: [{
-                name: '借书量',
+                name: 'Quantity',
                 type: 'bar',
                 data: [ {% for x in readerAmountData %} '{{ x }}', {% endfor %} ]
 
@@ -39,11 +36,11 @@
 
         var bookOption = {
             title: {
-                text: '最受欢迎的图书'
+                text: 'Most popular'
             },
             tooltip: {},
             legend: {
-                data: ['借书量'],
+                data: ['Quantity'],
             },
             xAxis: {
                 data: [ {% for x in bookData %} '《{{ x }}》', {% endfor %} ]
@@ -51,7 +48,7 @@
             },
             yAxis: {},
             series: [{
-                name: '借书量',
+                name: 'Quantity',
                 type: 'bar',
                 data: [ {% for x in bookAmountData %} '{{ x }}', {% endfor %} ]
 

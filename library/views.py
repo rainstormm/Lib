@@ -191,22 +191,22 @@ def reader_operation(request):
 
 
 def book_search(request):
-    search_by = request.GET.get('search_by', '书名')
+    search_by = request.GET.get('search_by', 'Title')
     books = []
     current_path = request.get_full_path()
 
-    keyword = request.GET.get('keyword', u'_书目列表')
+    keyword = request.GET.get('keyword', u'List')
 
-    if keyword == u'_书目列表':
+    if keyword == u'List':
         books = Book.objects.all()
     else:
-        if search_by == u'书名':
+        if search_by == u'Title':
             keyword = request.GET.get('keyword', None)
             books = Book.objects.filter(title__contains=keyword).order_by('-title')[0:50]
         elif search_by == u'ISBN':
             keyword = request.GET.get('keyword', None)
             books = Book.objects.filter(ISBN__contains=keyword).order_by('-title')[0:50]
-        elif search_by == u'作者':
+        elif search_by == u'Author':
             keyword = request.GET.get('keyword', None)
             books = Book.objects.filter(author__contains=keyword).order_by('-title')[0:50]
 

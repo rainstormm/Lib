@@ -1,6 +1,6 @@
 {% extends "library/base.html" %}
 {% load staticfiles %}
-{% block title %}查看图书{% endblock %}
+{% block title %}Books{% endblock %}
 
 
 
@@ -11,11 +11,11 @@
             <div class="alert alert-warning">
                 <a href="/login" class="close" data-dismiss="alert">&times;</a>
                 {% if state == 'no_user' %}
-                    <h2>请登陆</h2>
+                    <h2>Please Log in</h2>
                 {% elif state == 'upper_limit' %}
-                    <h2> 对不起，您借书数量已经达到上线</h2>
+                    <h2> The book you borrow reaches the limit</h2>
                 {% elif state == 'success' %}
-                    <h2>借阅成功</h2>
+                    <h2>Borrow Successfully</h2>
                 {% endif %}
             </div>
         </div>
@@ -25,7 +25,7 @@
         <div class="col-md-4 col-md-offset-4">
             <div class="alert alert-warning">
                 <a href="/search/" class="close" data-dismiss="alert">&times;</a>
-                    <h2> 对不起，此书已全部借出</h2>
+                    <h2> Sorry, all books are borrowed</h2>
             </div>
         </div>
 
@@ -43,11 +43,11 @@
                     <div class="col-md-5">
                         {% if book.quantity > 0 %}
                             <button class="btn btn-primary btn-lg"
-                                    onclick="location.href='detail'+'?ISBN={{ book.ISBN }}&action=borrow';">借阅
+                                    onclick="location.href='detail'+'?ISBN={{ book.ISBN }}&action=borrow';">Borrow
                             </button>
                         {% else %}
                             <button class="btn btn-primary btn-lg disabled">
-                            借阅
+                            Borrow
                             </button>
                         {% endif %}
                     </div>
@@ -56,14 +56,14 @@
                     <h2 class="text-center">{{ book.title }}</h2>
                     <br>
                     <h4>ISBN：{{ book.ISBN }}</h4>
-                    <h4>作者：{{ book.author }}</h4>
-                    <h4>出版社:{{ book.press }}</h4>
-                    <h4>类别：{{ book.category }}</h4>
-                    <h4>价格：{{ book.price|floatformat:2 }}</h4>
-                    <h4>位置:{{ book.location }}</h4>
-                    <h4>在馆数量：{{ book.quantity }}</h4>
+                    <h4>Author：{{ book.author }}</h4>
+                    <h4>Press:{{ book.press }}</h4>
+                    <h4>Category：{{ book.category }}</h4>
+                    <h4>Price：{{ book.price|floatformat:2 }}</h4>
+                    <h4>Location:{{ book.location }}</h4>
+                    <h4>Quantity：{{ book.quantity }}</h4>
                     <hr>
-                    <p>简介:</p>
+                    <p>Description:</p>
                     <P>{{ book.description }}</p>
                     <hr>
                 </div>
