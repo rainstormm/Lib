@@ -1,3 +1,8 @@
+import os
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+SECRET_KEY = 'izid20ow=+4ibe@+m13czpq+vuewg$dml##)q1erkc)mc=w%&a'
+
 ALLOWED_HOSTS = []
 
 # Application definition
@@ -50,7 +55,7 @@ WSGI_APPLICATION = 'slack_management.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'library.sqlite3'),
+        'NAME': os.path.join(BASE_DIR, 'lib.db'),
     }
 }
 
