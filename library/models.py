@@ -26,7 +26,7 @@ class Book(models.Model):
     price = models.CharField(max_length=20, null=True, verbose_name='Price')
 
     category = models.CharField(max_length=64, default=u'Literature', verbose_name='Category')
-    cover = models.ImageField(blank=True, upload_to=custom_path, verbose_name='Cover')
+    cover = models.ImageField(blank=True, null=True, upload_to=custom_path, verbose_name='Cover')
     index = models.CharField(max_length=16, null=True, verbose_name='Index')
     location = models.CharField(max_length=64, default=u'first floor', verbose_name='Location')
     quantity = models.IntegerField(default=1, verbose_name='Quantity')

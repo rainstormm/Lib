@@ -6,20 +6,20 @@
 
 {% block content %}
 
-    {% if state %}
-        <div class="col-md-4 col-md-offset-4">
-            <div class="alert alert-warning">
-                <a href="/login" class="close" data-dismiss="alert">&times;</a>
-                {% if state == 'no_user' %}
-                    <h2>Please Log in</h2>
-                {% elif state == 'upper_limit' %}
-                    <h2> The book you borrow reaches the limit</h2>
-                {% elif state == 'success' %}
-                    <h2>Borrow Successfully</h2>
-                {% endif %}
-            </div>
-        </div>
-    {% endif %}
+{#    {% if state %}#}
+{#        <div class="col-md-4 col-md-offset-4">#}
+{#            <div class="alert alert-warning">#}
+{#                <a href="/login" class="close" data-dismiss="alert">&times;</a>#}
+{#                {% if state == 'no_user' %}#}
+{#                    <h2>Please Log in</h2>#}
+{#                {% elif state == 'upper_limit' %}#}
+{#                    <h2> The book you borrow reaches the limit</h2>#}
+{#                {% elif state == 'success' %}#}
+{#                    <h2>Borrow Successfully</h2>#}
+{#                {% endif %}#}
+{#            </div>#}
+{#        </div>#}
+{#    {% endif %}#}
 
     {% if book.quantity == 0 %}
         <div class="col-md-4 col-md-offset-4">
