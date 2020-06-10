@@ -2,11 +2,11 @@ import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'izid20ow=+4ibe@+m13czpq+vuewg$dml##)q1erkc)mc=w%&a'
-
+DEBUG = True
 ALLOWED_HOSTS = []
 
-# Application definition
 
+# Application definition
 INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.auth',
@@ -14,8 +14,6 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
-
     'library.apps.libraryConfig',
 )
 
@@ -62,7 +60,7 @@ DATABASES = {
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
-LANGUAGE_CODE = 'zh-hans'
+LANGUAGE_CODE = 'EN-US'
 
 TIME_ZONE = 'Asia/Shanghai'
 
