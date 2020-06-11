@@ -14,9 +14,7 @@ class IndexPageTest(TestCase):
 class BookSearchPageTest(TestCase):
     def setUp(self) -> None:
         Book.objects.create(ISBN="11111111",title="title1",author="author1",press="press1",quantity=5)
-    def test_search(self):
-        response = self.client.get("/search/?search_by=Title&keyword=title1")
-        self.assertEqual(response.content, b'there is no such an ISBN')
+
     def test_search_page(self):
         response = self.client.get('/search/')
         self.assertEqual(response.status_code,200)
