@@ -5,5 +5,5 @@ from django.apps import AppConfig
 
 
 class libraryConfig(AppConfig):
-    name = 'library'
-    verbose_name = 'Management System'
+    name = "library"
+    verbose_name = "Management System"
