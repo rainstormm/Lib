@@ -2,3 +2,6 @@ Django==2.1
 django-crispy-forms==1.6.1
 Pillow==5.2.0
 Faker==0.7.11
+flake8==3.8.3
+black==19.10b0
+python-coveralls==2.9.3
