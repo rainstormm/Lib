@@ -3,8 +3,6 @@
 max-line-length = 88
 exclude =
     venv/*,
-    logs/*,
     htmlcov/*,
     .coverage,
-    */migrations/*,
-    settings/*
+    */migrations/*
